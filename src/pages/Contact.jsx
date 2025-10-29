@@ -1,21 +1,32 @@
-import React, { useState } from "react";
+import React, { useRef } from "react";
+import emailjs from "@emailjs/browser";
 
 export default function Contact() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
+  const form = useRef();
 
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = (e) => {
+  const sendEmail = async (e) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
-    alert("Thank you for reaching out! 🚀");
-    setFormData({ name: "", email: "", message: "" });
+    try {
+      await emailjs.sendForm(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID_ADMIN,
+        form.current,
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      );
+
+      await emailjs.sendForm(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID_USER,
+        form.current,
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      );
+
+      alert("Message sent successfully!");
+      form.current.reset();
+    } catch (error) {
+      console.error("Email sending error:", error);
+      alert("Failed to send message. Try again later.");
+    }
   };
 
   return (
@@ -30,7 +41,8 @@ export default function Contact() {
 
       {/* Contact Form */}
       <form
-        onSubmit={handleSubmit}
+        ref={form}
+        onSubmit={sendEmail}
         className="bg-[#0a0a0a] border border-[#00e5ff40] rounded-2xl p-8 md:p-10 w-full max-w-2xl shadow-[0_0_25px_#00e5ff20] backdrop-blur-sm"
       >
         <div className="mb-6">
@@ -40,8 +52,6 @@ export default function Contact() {
           <input
             id="name"
             name="name"
-            value={formData.name}
-            onChange={handleChange}
             type="text"
             required
             placeholder="Enter your name"
@@ -56,8 +66,6 @@ export default function Contact() {
           <input
             id="email"
             name="email"
-            value={formData.email}
-            onChange={handleChange}
             type="email"
             required
             placeholder="Enter your email"
@@ -72,8 +80,6 @@ export default function Contact() {
           <textarea
             id="message"
             name="message"
-            value={formData.message}
-            onChange={handleChange}
             required
             placeholder="Write your message..."
             rows="5"
@@ -94,11 +100,11 @@ export default function Contact() {
         </div>
       </form>
 
-      {/* Optional footer text */}
+      {/* Footer Text */}
       <p className="text-gray-400 text-sm mt-8 text-center">
         Or reach me directly at{" "}
         <a
-          href="mailto:sainathkancharakuntla@example.com"
+          href="mailto:sainathkancharakuntla@gmail.com"
           className="text-cyan-400 hover:underline"
         >
           sainathkancharakuntla@example.com
