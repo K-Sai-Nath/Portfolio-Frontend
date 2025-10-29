@@ -10,7 +10,7 @@ const projects = [
     date: "Aug 2024 – Dec 2024",
     description:
       "Built a ride-sharing platform with search filters for departure, destination, and seat availability. Integrated Firebase Authentication with Google Sign-In and JWT for secure login. Implemented city auto-suggestions and real-time filtering, improving user experience. Developed the backend using Node.js, Express, and MongoDB queries to support seamless ride-matching.",
-    link: "#",
+    link: "https://ease-commute.vercel.app/",
   },
   {
     id: 2,
@@ -19,7 +19,7 @@ const projects = [
     date: "Feb 2024 – Apr 2024",
     description:
       "Developed a full-stack authentication system with React frontend and Node.js/Express backend. Implemented secure login/signup using JWT and hashed passwords stored in MongoDB. Built role-based access control (RBAC) for managing permissions of different user types. Created RESTful APIs for login, signup, and token refresh, integrated seamlessly with React components.",
-    link: "#",
+    link: "https://github.com/K-Sai-Nath/Authentication-System",
   },
   {
     id: 3,
@@ -28,7 +28,7 @@ const projects = [
     date: "Feb 2023 – Apr 2023",
     description:
       "Developed a machine learning model using logistic regression and decision trees with 90%+ accuracy. Applied classification algorithms including logistic regression and decision trees to improve prediction precision and recall, enabling early detection. Performed comprehensive model evaluation using precision, recall, F1-score, and ROC-AUC metrics to validate robustness and reliability.",
-    link: "#",
+    link: "https://github.com/K-Sai-Nath/Diabetes-Prediction",
   },
 ];
 
