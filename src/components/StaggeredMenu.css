@@ -1,0 +1,99 @@
+/* StaggeredMenu mobile styling */
+.staggered-menu-wrapper.fixed-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 50;
+    overflow: hidden;
+    background: var(--bg-color, #1a1a1a); /* black background */
+  }
+  
+  .staggered-menu-panel {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 72px; /* width can be adjusted like previous menu */
+    max-width: 100%;
+    height: 100%;
+    background: var(--bg-color, #1a1a1a); /* dark background */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 6em 2em 2em 2em;
+    overflow-y: auto;
+    z-index: 60;
+  }
+  
+  .staggered-menu-panel .sm-panel-item {
+    color: var(--secondary-color, #ffffff); /* default text white */
+    font-weight: 500;
+    font-size: 1.25rem; /* similar to previous menu text-lg */
+    text-transform: capitalize;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    transition: color 0.3s, transform 0.3s;
+  }
+  
+  .staggered-menu-panel .sm-panel-item:hover {
+    color: var(--primary-color, #6366f1); /* primary color on hover */
+    transform: translateX(0.5rem); /* small move like hover effect */
+  }
+  
+  .staggered-menu-panel .sm-panel-item.active {
+    color: var(--primary-color, #6366f1);
+  }
+  
+  .staggered-menu-panel .sm-panel-contact {
+    width: 100%;
+    text-align: center;
+    margin-top: 2rem;
+  }
+  
+  .staggered-menu-panel .sm-panel-contact a {
+    display: inline-block;
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border-radius: 9999px;
+    background: linear-gradient(to right, #6366f1, #a855f7);
+    color: #fff;
+    font-weight: 600;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .staggered-menu-panel .sm-panel-contact a .button-glow {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, #6366f1, #a855f7, #6366f1);
+    filter: blur(12px);
+    opacity: 0.6;
+    z-index: 0;
+  }
+  
+  .staggered-menu-panel .sm-panel-contact a span {
+    position: relative;
+    z-index: 10;
+  }
+  
+  /* Hide social items */
+  .sm-socials {
+    display: none;
+  }
+  
+  /* Remove logo */
+  .sm-logo {
+    display: none;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 1024px) {
+    .staggered-menu-panel {
+      width: 100%;
+      left: 0;
+      right: 0;
+    }
+  }
+  
