@@ -107,7 +107,7 @@ export default function Contact() {
           href="mailto:sainathkancharakuntla@gmail.com"
           className="text-cyan-400 hover:underline"
         >
-          sainathkancharakuntla@example.com
+          sainathkancharakuntla@gmail.com
         </a>
       </p>
     </section>

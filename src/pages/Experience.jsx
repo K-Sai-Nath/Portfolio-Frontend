@@ -7,9 +7,10 @@ const experiences = [
   {
     title: "SAP Compensation Intern",
     company: "Accenture",
+    location: "Bengaluru",
     duration: "Feb 2025 – Jun 2025",
     description:
-      "Configured and automated compensation planning in SuccessFactors, including template creation, comp-salary-rule setup, and promotion workflow management to streamline employee data updates.",
+      "Configured and maintained the SAP SuccessFactors Compensation module to support global compensation cycles, ensuring seamless execution across regions. Migrated eight learning boards, each containing over fifty items, into SAP Collections and Communities of Practice (CoPs), improving accessibility and global collaboration. Collaborated with cross-functional teams to optimize global compensation structures, aligning them with business rules and learning strategies. Additionally, automated eligibility rule setups and guideline enforcement processes, reducing manual administrative effort by 30% and enhancing operational efficiency.",
   },
 ];
 
@@ -56,7 +57,9 @@ export default function Experience() {
                   <h3 className="text-3xl font-semibold text-cyan-400 mb-2">
                     {exp.title}
                   </h3>
-                  <p className="text-lg text-gray-400 mb-1">{exp.company}</p>
+                  <p className="text-lg text-gray-400 mb-1">
+                    {exp.company} | {exp.location}
+                  </p>
                   <p className="text-md text-gray-400 mb-4">{exp.duration}</p>
                   <p className="text-gray-300 text-base md:text-lg leading-relaxed">
                     {exp.description}
